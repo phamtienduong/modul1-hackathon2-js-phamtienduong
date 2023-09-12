@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = prompt("Mời bạn nhập 5 số nguyên bất kì");
+        let numbers = a.split(',').map(Number);
+        let isVisible = false;
+        let maxUnique = null;
+        for (let i = 0; i < numbers.length; i++) {
+            let current = numbers[i];
+                if (numbers.indexOf(current) === numbers.lastIndexOf(current)) {
+                if (!isVisible || current > maxUnique) {
+                    maxUnique = current;
+                    isVisible = true;
+                }
+            }
+        }
+        if (isVisible) {
+            document.write('Số lớn nhất và duy nhất trong danh sách là:', maxUnique);   
+        } else {
+            document.write('Không có số lớn nhất và duy nhất trong danh sách.');
+        }
+
+    </script>
+</body>
+</html>
